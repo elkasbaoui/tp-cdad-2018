@@ -1,4 +1,6 @@
 {
-  "Welcome": "Bienvenue",
-  "A brand new app.": "Une toute nouvelle application."
+	"Welcome": "Bienvenue",
+	"A brand new app.": "Une toute nouvelle application.",
+	"sails-hook-email": "sails-hook-email",
+	"Salut Bo gosse": "Salut Bo gosse"
 }

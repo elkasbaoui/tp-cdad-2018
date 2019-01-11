@@ -36,4 +36,14 @@ module.exports.routes = {
   'get /say':  'CowsayController.say',
   'get /add':  'CowsayController.add',
   'post /add':  'CowsayController.create',
+  'get /public/images/*': {
+    controller: 'CowsayController',
+    action: 'get'
+  },
+  'get /addimage':  'CowsayController.addimage',
+  'get /upload':'CowsayController.upload',
+  'get /avatar': 'CowsayController.avatar',
+  'post /avatar':  'CowsayController.upload',
+  'post /addImage':  'CowsayController.updatePicture',
+  //'get /addPicture':  'CowsayController.addPicture',
 };

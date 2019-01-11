@@ -1,5 +1,54 @@
-<pre>
-<%= cow %>
-</pre>
+<p><pre>
+    <table>
+        <tr><td><%= cow %></td>
+            <td><img width="200px" height="200px" src="https://coloriage.info/images/ccovers/1457716330vache.jpg"/></td>
+            <td><img width="200px" height="200px" src="../assets/images/vache.jpg"/></td>
+        </tr>
 
-<a href="/add">Add a new sentence</a>
+
+
+</table>
+</pre>
+</p>
+<p>
+<a href="/add">Add a new sentence</a></p>
+<a href="/addimage">Add a profil picture</a>
+<!--
+<form id="uploadForm"
+      enctype="multipart/form-data"
+      action="/file/upload"
+      method="post" name="uploadForm" novalidate>
+    <input type="file" id="userPhotoInput" name="userPhoto" id ="userPhoto" />
+ 
+ <input type="submit" value="submit"/> -->
+
+
+ <!-- PARTIE MAIL -->
+ <script type="text/javascript">
+    setTimeout(function sunrise () {
+        document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
+    }, 0);
+    function sendEmail() {
+      io.socket.get("/email/send", function(body, response) {
+        if (response.statusCode == 200) {
+          document.getElementById('result').innerHTML += "<p>It worked!</p>";
+        } else {
+          document.getElementById('result').innerHTML += "<p>An error occurred: " + body + "</p>";
+        }
+      });
+    }
+    </script>
+    
+    <div class="default-page">
+        <div class="header">
+            <h1 id="main-title" class="container"><%= __('Salut Bo gosse') %></h1>
+        </div>
+        <div class="main container clearfix">
+            
+            <div>
+              <br/><br/>Click <a href="javascript:sendEmail()">here</a> to send a test email (saved to <a href="/email/show" target="email">.tmp/email.txt</a>). (Ca ne marche pas, enfin... je crois)
+            </div>
+            <hr/>
+            <div id="result"></div>
+        </div>
+    </div>
